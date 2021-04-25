@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Root.gd" type="Script" id=1]
+[ext_resource path="res://Table.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Room.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Paddle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cube.tscn" type="PackedScene" id=6]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.87
+
+[node name="Root" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Table" parent="." instance=ExtResource( 2 )]
+
+[node name="Room" parent="." instance=ExtResource( 3 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.830123, -0.308807, 0.464257, -0.556925, -0.499554, 0.663536, 0.0270164, -0.809373, -0.586673, 0, 0, 0 )
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_normal_bias = 0.01
+directional_shadow_max_distance = 5.0
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1.43091e-07, -0.478132, 0.878288, -7.78976e-08, 0.878288, 0.478132, -1, 0, -1.62921e-07, 2.10385, 1.88517, 0 )
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12628, 1.40361, -0.231116 )
+physics_material_override = SubResource( 1 )
+linear_velocity = Vector3( -2.3, -0.4, 0.5 )
+
+[node name="Paddle" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38375, 0 )
+
+[node name="Ball2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354201, 2.06244, 0.375681 )
+
+[node name="Cube" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.872482, 0, 0, 0, 0.170441, 0, 0, 0, 0.872482, 0.719228, 0.85598, 0.00652313 )

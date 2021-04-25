@@ -1,0 +1,10 @@
+Control scheme:
+	The paddle moves along the surface of a sphere centered at a point slightly above the center of the net. The default position of the paddle has its normal directed straight at this point.
+
+	Left analog stick moves the paddle. Holding a direction will move the paddle in that direction with a velocity dependent on how far the control stick is pushed.
+
+	Right analog stick controls the hit. Moving the control stick back winds the paddle up for a hit. Moving the control stick forward quickly swings the paddle forward. The x-tilt of the joystick determines in what direction the paddle will aim towards. All "proper" hits should pass through the origin of the joystick and move in a straight line. The direction of the path the joystick moved controls the left-right aim of the paddle. Adding mass to the paddle should incentivize "proper" hits and make a bigger difference between light hits and smashes.
+
+	Left trigger can be held to switch the left analog stick into screw mode. In this mode the joystick instead controls the tilt of the paddle in both horizontal and vertical directions. This allows for fastballs, stop-balls and screws to the side
+
+# vim: colorcolumn=999 wrap linebreak nolist
